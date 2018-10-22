@@ -12,6 +12,7 @@ fig1  = figure(figsize = (8,6), dpi=150)
 fig2 = figure(figsize = (8,6), dpi=150)
 path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Pristine H2SO4 rerun\\CD\\CD\\'
 #testing123
+#this is a change
 "CCCD Plotter"
 
         
