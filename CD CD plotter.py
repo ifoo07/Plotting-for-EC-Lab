@@ -14,7 +14,7 @@ path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 E
 
 "CCCD Plotter"
 
-        
+
 sname =['CD_03_CP_C01','CD_02_CP_C01','CD_01_CP_C01','CD_04_CP_C01','CD_05_CP_C01','CD_06_CP_C01','CD_07_CP_C01' ] #filenames of data files (withour file extensions - will be added later automatially) to plot
 
 labels = ['0.25A/g','0.5A/g','1A/g','2A/g','3A/g','4A/g','5A/g']
@@ -22,40 +22,40 @@ CD = [0.25,0.5,1,2,3,4,5]
 fname=[]
 for i in sname:
     fname.append(path +i+ '.txt')
-    
+
 Cs = []
 
 for j in range(len(sname)):
-    time,voltage, cycle = np.genfromtxt(fname[j], delimiter = '\t',skip_header = 57,skip_footer =1, usecols = (0,1,2),unpack =True,dtype = str) 
+    time,voltage, cycle = np.genfromtxt(fname[j], delimiter = '\t',skip_header = 57,skip_footer =1, usecols = (0,1,2),unpack =True,dtype = str)
 
     for arr in [voltage, time, cycle]:
             for k in range(len(arr)):
                 arr[k]=arr[k].replace(',','.')
                 arr[k] = float(arr[k])
-                
+
     start = cycle.tolist().index('2.0')
     try:
         end = cycle.tolist().index('3.0')-1
     except:
         end = len(cycle)-1
-    
-    
-    norm = float(time[start])    
+
+
+    norm = float(time[start])
     for k in range(start,end,1):
         time[k] = float(time[k])- norm
-    
+
     V = voltage[start:end]
-    t = time[start:end] 
-   
+    t = time[start:end]
+
     pos_t0 = V.tolist().index(max(V))   # find index of t0
     t0 = t[pos_t0]                      # assign t0
     t1 = t[-1]                          # assign t1 to last element of time array
     td = float(t1) - float(t0)          # calculate discharge time
     V0 = float(max(V)) - float(min(V))
-    
+
     Cs.append( (CD[j]*td)/V0 )
-    
-    
+
+
 #    d_ax = fig1.add_subplot(111)
 #    d_ax.plot(t, V, label = labels[j])
 #
