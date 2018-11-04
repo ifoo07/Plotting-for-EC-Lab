@@ -53,7 +53,7 @@ for j in range(len(sname)):
     td = float(t1) - float(t0)          # calculate discharge time
     V0 = float(max(V)) - float(min(V))
 
-    Cs.append( (CD[j]*td)/V0 )
+    Cs.append( 4*(CD[j]*td)/V0 )
 
 
     d_ax = fig1.add_subplot(111)
