@@ -3,13 +3,9 @@ from pylab import *
 import numpy as np
 
 fig  = figure(figsize = (8,6), dpi=150)
-path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\8% OLC H2SO4\\CD\\'
+path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Repeats\\Pristine MXene\\Pristine MX rerun\\Cycling\\'
 
-fname = path + 'cycling_01_CP_C01.txt'
-
-
-
-
+fname = path + 'cycling_02_CP_C01.txt'
 
 capacitance_import, C_eff_import, cycle_import  = np.genfromtxt(fname, delimiter = '\t',skip_header = 53, usecols = (0,1,2),unpack =True,dtype = str)
 

@@ -15,19 +15,19 @@ import numpy as np
 
 
 fig  = plt.figure(dpi=150)
-path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Pristine H2SO4 rerun\\'
+path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Repeats\\Pristine MXene\\Pristine MX rerun\\'
 
-sname = ['test1_C01', 'test2_C01']
+sname = ['CV_test1_C01', 'CV_test2_C01','CV_test3_C01']
 
-labels = ['before 1A/g activation','after 1A/g activation']
-mass = 0.00328 # active material mass [g]
+labels = ['before activation','after 1A/g activation','after 5mV/s activation']
+mass = 0.00384 # active material mass [g]
 
 fname=[]
 for i in sname:
     fname.append(path+i + '.txt')
 ################# beginning of loop ##############
 for j in range(len(sname)):
-    voltage, current, cycle = np.genfromtxt(fname[j], delimiter = '\t',skip_header = 69,skip_footer =1, usecols = (0,1,2),unpack =True,dtype = str)
+    voltage, current, cycle = np.genfromtxt(fname[j], delimiter = '\t',skip_header = 72,skip_footer =1, usecols = (0,1,2),unpack =True,dtype = str)
 
     for arr in [voltage, current, cycle]:
             for k in range(len(arr)):
