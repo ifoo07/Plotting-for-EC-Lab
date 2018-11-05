@@ -39,7 +39,7 @@ for j in range(len(sname)):
     Cs = []
     sr = 20
     for i in current:
-        Cs.append(float(i)/(sr*mass))
+        Cs.append(4*float(i)/(sr*mass))
 
     plt.plot(voltage, Cs, label = labels[j])
 ############# end of loop ####################
