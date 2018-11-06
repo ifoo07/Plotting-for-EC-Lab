@@ -12,7 +12,7 @@ fig  = figure(dpi=150)
 
 "CCCD Plotter"
 
-path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Repeats\\Pristine MXene\\Pristine MX rerun\\CD\\PW\\'
+path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Pristine H2SO4 rerun\\CD\\PW\\'
 
 sname =['CD_pw_01_CP_C01','CD_pw_02_CP_C01','CD_pw_03_CP_C01','CD_pw_04_CP_C01','CD_pw_05_CP_C01']
 

@@ -17,10 +17,10 @@ import numpy as np
 fig  = plt.figure(dpi=150)
 path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Repeats\\Pristine MXene\\Pristine MX rerun\\CV\\PW\\'
 
-sname = ['CV_pw_01_CV_C01','CV_pw_02_CV_C01','CV_pw_03_CV_C01','CV_pw_04_CV_C01','CV_pw_05_CV_C01']
+sname = ['CV_PW_01_CV_C01','CV_PW_02_CV_C01','CV_PW_03_CV_C01','CV_PW_04_CV_C01','CV_PW_05_CV_C01']
 
 
-mass = 0.00384 # active material mass [g]
+mass = 0.00328 # active material mass [g]
 
 fname=[]
 for i in sname:

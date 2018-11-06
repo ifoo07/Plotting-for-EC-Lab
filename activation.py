@@ -15,12 +15,12 @@ import numpy as np
 
 
 fig  = plt.figure(dpi=150)
-path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Repeats\\Pristine MXene\\Pristine MX rerun\\'
+path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Pristine H2SO4 rerun\\'
 
-sname = ['CV_test1_C01', 'CV_test2_C01','CV_test3_C01']
+sname = ['test1_C01', 'test2_C01']
 
-labels = ['before activation','after 1A/g activation','after 5mV/s activation']
-mass = 0.00384 # active material mass [g]
+labels = ['before activation','after 1A/g activation']
+mass = 0.00328 # active material mass [g]
 
 fname=[]
 for i in sname:

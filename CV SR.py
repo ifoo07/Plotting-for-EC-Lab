@@ -15,11 +15,11 @@ import numpy as np
 
 """User defined variables"""
 
-path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Repeats\\Pristine MXene\\Pristine MX rerun\\CV\\SR\\' # path name - be sure to use // instead of / for Windows
-sname = ['CV_sr_01_CV_C01','CV_sr_02_CV_C01','CV_sr_03_CV_C01','CV_sr_04_CV_C01','CV_sr_05_CV_C01','CV_sr_06_CV_C01','CV_sr_07_CV_C01','CV_sr_08_CV_C01','CV_sr_09_CV_C01'] # file names of data to be plotted
+path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Pristine H2SO4 rerun\\CV\\SR\\' # path name - be sure to use // instead of / for Windows
+sname = ['CV_lowscan_01_CV_C01','CV_lowscan_02_CV_C01','CV_sr_01_CV_C01','CV_sr_02_CV_C01','CV_sr_03_CV_C01','CV_sr_04_CV_C01','CV_sr_05_CV_C01','CV_sr_06_CV_C01','CV_sr_07_CV_C01'] # file names of data to be plotted
 scanrate = [5,10,20,40,50,75,100,150,200] #scan rates from data
 labels = ['5mV/s','10mV/s','20mV/s','40mV/s','50mV/s','75mV/s','100mV/s','150mV/s','200mV/s'] #scan rate labels, must correlate with above
-mass = 0.00384 #g - mass of active material
+mass = 0.00328 #g - mass of active material
 
 """beginning of actual plotting code"""
 

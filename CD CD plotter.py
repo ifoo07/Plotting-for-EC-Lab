@@ -8,17 +8,24 @@ Created on Sun Jun 10 13:01:09 2018
 from pylab import *
 import numpy as np
 
-fig1  = figure(figsize = (8,6), dpi=150)
-fig2 = figure(figsize = (8,6), dpi=150)
-path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Repeats\\Pristine MXene\\Pristine MX rerun\\CD\\CD\\CD files to plot\\'
+
 
 "CCCD Plotter"
 
+"User defined variables"
 
-sname =['CD_cd_01_CP_C01','CD_cd_02_CP_C01','CD_cd_03_CP_C01','CD_cd_04_CP_C01','CD_cd_05_CP_C01','CD_cd_06_CP_C01','CD_cd_07_CP_C01','CD_cd_08_CP_C01','CD_cd_09_CP_C01','CD_cd_10_CP_C01','CD_cd_11_CP_C01','CD_cd_12_CP_C01'] #filenames of data files (withour file extensions - will be added later automatially) to plot
 
-labels = ['0.25A/g','0.3A/g','0.4A/g','0.5A/g','1A/g','2A/g','3A/g','4A/g','5A/g','10A/g','15A/g','20A/g']
-CD = [0.25,0.3,0.4,0.5,1,2,3,4,5,10,15,20]
+path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Pristine H2SO4 rerun\\CD\\CD\\'  # path name - be sure to use // instead of / for Windows
+sname =['CD_03_CP_C01','CD_02_CP_C01','CD_01_CP_C01','CD_04_CP_C01','CD_05_CP_C01','CD_06_CP_C01','CD_07_CP_C01'] #filenames of data files (withour file extensions - will be added later automatially) to plot
+labels = ['0.25A/g','0.5A/g','1A/g','2A/g','3A/g','4A/g','5A/g']
+CD = [0.25,0.5,1,2,3,4,5]
+
+
+"Beginning of actual plotting code"
+
+fig1  = figure(figsize = (8,6), dpi=150)
+fig2 = figure(figsize = (8,6), dpi=150)
+
 fname=[]
 for i in sname:
     fname.append(path +i+ '.txt')
