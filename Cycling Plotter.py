@@ -3,7 +3,7 @@ from pylab import *
 import numpy as np
 
 fig  = figure(figsize = (8,6), dpi=150)
-path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Repeats\\Pristine MXene\\Pristine MX rerun\\Cycling\\'
+path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Pristine H2SO4 rerun\\post activation\\CD\\'
 
 fname = path + 'cycling_02_CP_C01.txt'
 
@@ -45,5 +45,5 @@ ax2.set_ylabel('Capacitive Retention [%]')
 ax2.set_ylim(top = 105, bottom = 50)
 ax2.grid()
 
-savefig(path + 'Efficiency.png')
+savefig(path + 'Pristine MX Efficiency.png')
 show()

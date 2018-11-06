@@ -15,7 +15,7 @@ import numpy as np
 
 
 fig  = plt.figure(dpi=150)
-path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Repeats\\Pristine MXene\\Pristine MX rerun\\CV\\PW\\'
+path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Pristine H2SO4 rerun\\CV\\PW\\'
 
 sname = ['CV_PW_01_CV_C01','CV_PW_02_CV_C01','CV_PW_03_CV_C01','CV_PW_04_CV_C01','CV_PW_05_CV_C01']
 
@@ -51,6 +51,6 @@ for j in range(len(sname)):
 plt.xlabel(r'$V_{WE}$ [V]')
 plt.ylabel( 'Specific Capacitance [F/g]')
 plt.grid()
-plt.text(0.2,110,r'0.3V $\rightarrow$ 0.7V', fontsize = 16)
+plt.text(0.2,170,r'0.3V $\rightarrow$ 0.7V', fontsize = 16)
 plt.savefig(path+'Potential Windows for Pristine MX.png')
 plt.show()

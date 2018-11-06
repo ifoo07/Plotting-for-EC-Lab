@@ -15,10 +15,10 @@ import numpy as np
 "User defined variables"
 
 
-path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Pristine H2SO4 rerun\\CD\\CD\\'  # path name - be sure to use // instead of / for Windows
-sname =['CD_03_CP_C01','CD_02_CP_C01','CD_01_CP_C01','CD_04_CP_C01','CD_05_CP_C01','CD_06_CP_C01','CD_07_CP_C01'] #filenames of data files (withour file extensions - will be added later automatially) to plot
+path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Pristine H2SO4 rerun\\post activation\\CD\\CD\\'  # path name - be sure to use // instead of / for Windows
+sname =['CD_02_CP_C01','CD_01_CP_C01','CD_07_CP_C01','CD_08_CP_C01','CD_09_CP_C01','CD_10_CP_C01'] #filenames of data files (withour file extensions - will be added later automatially) to plot
 labels = ['0.25A/g','0.5A/g','1A/g','2A/g','3A/g','4A/g','5A/g']
-CD = [0.25,0.5,1,2,3,4,5]
+CD = [0.5,1,2,3,4,5]
 
 
 "Beginning of actual plotting code"
@@ -79,7 +79,7 @@ Cs_ax.plot(CD,Cs, marker = 'o')
 Cs_ax.set_xlabel('Current Density [A/g]')
 Cs_ax.set_ylabel('Specific Capacitance [F/g]')
 Cs_ax.grid()
-fig2.savefig(path+'Cs vs CD for Pristine MX.png')
+fig2.savefig(path+'Cs vs CD for Pristine MX (post-activation).png')
 
 f = open(path+'Pristine MX Cs data.txt', 'w')
 for i in range(len(Cs)):
