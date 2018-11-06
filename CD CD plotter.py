@@ -15,7 +15,7 @@ import numpy as np
 "User defined variables"
 
 
-path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\4% OLC H2SO4\\CD\\CD\\'  # path name - be sure to use // instead of / for Windows
+path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\8% OLC H2SO4\\CD\\CD\\'  # path name - be sure to use // instead of / for Windows
 sname =['CD_03_CP_C01','CD_02_CP_C01','CD_01_CP_C01','CD_05_CP_C01','CD_06_CP_C01','CD_07_CP_C01','CD_08_CP_C01'] #filenames of data files (withour file extensions - will be added later automatially) to plot
 labels = ['0.25A/g','0.5A/g','1A/g','2A/g','3A/g','4A/g','5A/g']
 CD = [0.25,0.5,1,2,3,4,5]
@@ -70,7 +70,7 @@ d_ax.set_xlabel(r'time[s]')
 d_ax.set_ylabel(r'$V_{WE}$')
 d_ax.legend(loc=1)
 d_ax.grid()
-fig1.savefig(path+'Current Densities for Pristine MX.png')
+fig1.savefig(path+'Current Densities for 8% OLC_MX.png')
 
 
 Cs_ax = fig2.add_subplot(111)
@@ -80,9 +80,9 @@ Cs_ax.set_xlabel('Current Density [A/g]')
 Cs_ax.set_ylabel('Specific Capacitance [F/g]')
 Cs_ax.set_ylim(top = 150)
 Cs_ax.grid()
-fig2.savefig(path+'Cs vs CD for 4% OLC.png')
+fig2.savefig(path+'Cs vs CD for 8% OLC.png')
 
-f = open(path+'4% OLC Cs data.txt', 'w')
+f = open(path+'8% OLC Cs data.txt', 'w')
 for i in range(len(Cs)):
     f.write(str(CD[i]) + '\t' + str(Cs[i]) + '\n')
 f.close()

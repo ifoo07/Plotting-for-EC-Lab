@@ -15,12 +15,12 @@ import numpy as np
 
 
 fig  = plt.figure(dpi=150)
-path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\4% OLC H2SO4\\CV\\PW\\'
+path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\8% OLC H2SO4\\CV\\PW\\'
 
 sname = ['CV_PW_01_CV_C01','CV_PW_02_CV_C01','CV_PW_03_CV_C01','CV_PW_04_CV_C01','CV_PW_05_CV_C01']
 
 
-mass = 0.00304 # active material mass [g]
+mass = 0.00328 # active material mass [g]
 
 fname=[]
 for i in sname:
@@ -52,5 +52,5 @@ plt.xlabel(r'$V_{WE}$ [V]')
 plt.ylabel( 'Specific Capacitance [F/g]')
 plt.grid()
 plt.text(0.2,170,r'0.3V $\rightarrow$ 0.7V', fontsize = 16)
-plt.savefig(path+'Potential Windows for 4% OLC_MX.png')
+plt.savefig(path+'Potential Windows for 8% OLC_MX.png')
 plt.show()
