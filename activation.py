@@ -15,10 +15,8 @@ import numpy as np
 
 
 fig  = plt.figure(dpi=150)
-path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Pristine H2SO4 rerun\\'
-
-sname = ['test1_C01', 'test2_C01']
-
+path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\8% OLC H2SO4\\'  # path name - be sure to use // instead of / for Windows
+sname = ['test1_C01', 'test3_CV_C01']
 labels = ['before activation','after 1A/g activation']
 mass = 0.00328 # active material mass [g]
 
@@ -48,5 +46,5 @@ plt.xlabel(r'$V_{WE}$ [V]')
 plt.ylabel( 'Specific Capacitance [F/g]')
 plt.legend()
 plt.grid()
-plt.savefig(path+'activation for Pristine MX.png')
+plt.savefig(path+'activation for 8% OLC_MX.png')
 plt.show()

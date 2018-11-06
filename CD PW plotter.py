@@ -12,7 +12,7 @@ fig  = figure(dpi=150)
 
 "CCCD Plotter"
 
-path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Pristine H2SO4 rerun\\post activation\\CD\\PW\\'
+path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\4% OLC H2SO4\\CD\\PW\\'
 
 sname =['CD_pw_01_CP_C01','CD_pw_02_CP_C01','CD_pw_03_CP_C01','CD_pw_04_CP_C01','CD_pw_05_CP_C01']
 
@@ -46,7 +46,7 @@ xlabel(r'time[s]')
 ylabel(r'$V_{WE}$')
 text(8,0.65, r'0.3V $\rightarrow$ 0.7V',fontsize = 16,rotation = 45)
 grid()
-savefile = path+'Potential Windows (CD) for Pristine MX (post-activation)'
+savefile = path+'Potential Windows (CD) for 4% OLC_MX'
 
 savefig(savefile+'.png')
 show()
