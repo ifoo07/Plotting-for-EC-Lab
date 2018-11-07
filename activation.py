@@ -16,7 +16,7 @@ import numpy as np
 
 fig  = plt.figure(dpi=150)
 path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\8% OLC H2SO4\\'  # path name - be sure to use // instead of / for Windows
-sname = ['test1_C01', 'test3_CV_C01']
+sname = ['test1_C01', 'test2_CV_C01']
 labels = ['before activation','after 1A/g activation']
 mass = 0.00328 # active material mass [g]
 
