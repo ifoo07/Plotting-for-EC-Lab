@@ -14,21 +14,24 @@ import numpy as np
 
 
 """User defined variables"""
-
-path = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\4% OLC H2SO4\\CV\\SR\\' # path name - be sure to use // instead of / for Windows
-sname = ['CV_lowscan_02_CV_C01','CV_lowscan_01_CV_C01','CV_sr_01_CV_C01','CV_sr_02_CV_C01','CV_sr_03_CV_C01','CV_sr_04_CV_C01','CV_sr_05_CV_C01','CV_sr_06_CV_C01','CV_sr_07_CV_C01'] # file names of data to be plotted
-scanrate = [5,10,20,40,50,75,100,150,200] #scan rates from data
-labels = ['5mV/s','10mV/s','20mV/s','40mV/s','50mV/s','75mV/s','100mV/s','150mV/s','200mV/s'] #scan rate labels, must correlate with above
-mass = 0.00328 #g - mass of active material
+pathS = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\comp data\\'
+pathMX =  r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Pristine H2SO4 rerun\\CV\\SR\\'
+path4 = r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\4% OLC H2SO4\\CV\\SR\\' # path name - be sure to use // instead of / for Windows
+path8 =  r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\8% OLC H2SO4\\CV\\SR\\'
+path = [pathMX,path4,path8]
+sname = 'CV_sr_03_CV_C01' # file names of data to be plotted
+scanrate = 50
+labels = ['Pristine MX', 'MX/OLC (5%)', 'MX/OLC (10%)'] #scan rate labels, must correlate with above
+mass = [0.00328,0.00304,0.00328] #g - mass of active material
 
 """beginning of actual plotting code"""
 
 fig  = plt.figure(dpi=150)
 fname=[]
-for i in sname:
-    fname.append(path+i + '.txt')
+for i in range(len(path)):
+    fname.append(path[i]+sname + '.txt')
 ################# beginning of loop ##############
-for j in range(len(sname)):
+for j in range(len(fname)):
     voltage, current, cycle = np.genfromtxt(fname[j], delimiter = '\t',skip_header = 57,skip_footer =1, usecols = (0,1,2),unpack =True,dtype = str)
 
     for arr in [voltage, current, cycle]:
@@ -43,9 +46,9 @@ for j in range(len(sname)):
         end = len(cycle)-1
 
     Cs = []
-    sr = scanrate[j]
+    sr = scanrate
     for i in current:
-        Cs.append(4*(float(i)/(sr*mass)))
+        Cs.append(4*(float(i)/(sr*mass[j])))
 
     plt.plot(voltage[start:end], Cs[start:end], label = labels[j])
 
@@ -56,5 +59,5 @@ plt.xlabel(r'$V_{WE}$ [V]')
 plt.ylabel( 'Specific Capacitance [F/g]')
 plt.legend()
 plt.grid()
-fig.savefig(path+'Scan rates for Pris MX.png')
+fig.savefig(pathS+'SR_comp.png')
 plt.show()
