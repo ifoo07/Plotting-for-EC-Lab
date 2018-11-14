@@ -10,7 +10,7 @@ def Z(f,Rs,Q1,n1,R1,Q2,n2,R2):
     return z_re
 
 
-path =r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\Repeats\\Pristine MXene\\Pristine MX rerun\\EIS\\'
+path =r'D:\\Google Drive\\Masters Research - Supercapacitor\\Data\\EC data\\2 Electrode\\Swagelok T-Type\\8% OLC H2SO4\\EIS\\'
 sname = ['EIS_before','EIS_before_zfit','EIS_after', 'EIS_after_zfit']
 header = [63,3,63,3]
 fig  = plt.figure(dpi=150)
@@ -36,5 +36,5 @@ legend()
 grid()
 xlabel(r'Re(Z) [$\Omega$]')
 ylabel(r'-Im(Z) [$\Omega$]')
-savefig(path + 'EIS_fit_MX.png')
+# savefig(path + 'EIS_fit_MX.png')
 show()
