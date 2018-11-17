@@ -100,7 +100,7 @@ d_ax.grid()
 fig1.savefig(path+'ESR for 8% OLC.png')
 
 f = open(path+'8% OLC ESR data.txt', 'w')
-f.write('CD' + '\t' + 'ESR' + '\t' + 'Pmax' + '\t' + 'Emax' + '\n')
+f.write('CD' + '\t' + 'ESR' +'\t'+ 'Cs'+'\t' + 'Pmax' + '\t' + 'Emax' + '\n')
 for i in range(len(CD)):
     f.write(str(CD[i]) + '\t' + str(ESR[i]) + '\t' + str(Pmax[i])+ '\t' + str(Emax[i]) + '\n')
 f.close()
