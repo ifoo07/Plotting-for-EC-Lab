@@ -20,16 +20,20 @@ sname =['CD_03_CP_C01','CD_02_CP_C01','CD_01_CP_C01','CD_05_CP_C01','CD_06_CP_C0
 labels = ['0.25A/g','0.5A/g','1A/g','2A/g','3A/g','4A/g','5A/g']
 CD = [0.25,0.5,1,2,3,4,5]
 mass = 0.00328
-
+um = 0.000005
 "Beginning of actual plotting code"
 
 fig1  = figure(figsize = (8,6), dpi=150)
 fig2 = figure(figsize = (8,6), dpi=150)
 
 ESR = []
+uESR = []
 Cs = []
+uC = []
 Pmax = []
+uP = []
 Emax = []
+uE = []
 
 fname=[]
 for i in sname:
@@ -61,6 +65,10 @@ for j in range(len(sname)):
 
     pos_t0 = V.tolist().index(max(V))   # find index of t0
     V1 = float(V[pos_t0])
+    # if j ==0:
+    #     V2 = float(V[pos_t0 + 2])
+    # else: V2 = float(V[pos_t0 + 1])
+
     V2 = float(V[pos_t0 + 1])
     V_IR = V1-V2 # IR drop
 
@@ -71,15 +79,16 @@ for j in range(len(sname)):
     V0 = float(max(V)) - float(min(V))
 
     Cs.append( 4*(CD[j]*td)/V0 )
-
+    # uC.append( Cs[j]*(um/mass) )
     ESR.append(V_IR/(2.0*CD[j]*mass))
-
+    # uESR.append(0.05*ESR[j])
     pmax_temp = ((V0**2))/(4*mass*ESR[j])
-    print(ESR[j])
+
     Pmax.append(pmax_temp)
-
+    # uP_temp = Pmax[j]*sqrt( (um/mass)**2 + (uESR[j]/ESR[j])**2 )
+    # uP.append(uP_temp)
     Emax.append((Cs[j]*(V0**2)*1000)/(2*3600))
-
+    # uE.append(Emax[j]*(uC[j]/Cs[j]))
     d_ax = fig2.add_subplot(111)
     d_ax.scatter(Pmax[j], Emax[j],marker = 'o', label = labels[j])
 
@@ -89,20 +98,20 @@ d_ax.set_xlabel(r'Maximum Power Density [$W\cdot kg^{-1}$]')
 d_ax.set_ylabel(r'Maximum Energy Density [$W \cdot h \cdot kg^{-1}$]')
 d_ax.grid()
 d_ax.legend()
-fig2.savefig(path+'Ragone for 8% OLC.png')
+# fig2.savefig(path+'Ragone for 4% OLC.png')
 
 
-d_ax = fig1.add_subplot(111)
-d_ax.plot(CD, ESR,marker = 'o', label = labels[j])
-d_ax.set_xlabel('Current Density [A/g]')
-d_ax.set_ylabel(r'ESR [$\Omega$]')
-d_ax.grid()
-fig1.savefig(path+'ESR for 8% OLC.png')
+# d_ax = fig1.add_subplot(111)
+# d_ax.plot(CD, ESR,marker = 'o', label = labels[j])
+# d_ax.set_xlabel('Current Density [A/g]')
+# d_ax.set_ylabel(r'ESR [$\Omega$]')
+# d_ax.grid()
+# fig1.savefig(path+'ESR for 4% OLC.png')
 
 f = open(path+'8% OLC ESR data.txt', 'w')
 f.write('CD' + '\t' + 'ESR' +'\t'+ 'Cs'+'\t' + 'Pmax' + '\t' + 'Emax' + '\n')
 for i in range(len(CD)):
-    f.write(str(CD[i]) + '\t' + str(ESR[i]) + '\t' + str(Pmax[i])+ '\t' + str(Emax[i]) + '\n')
+    f.write(str(CD[i]) + '\t' + str(ESR[i]) + '\t' +str(Cs[i]) +'\t' + str(Pmax[i])+ '\t' + str(Emax[i]) + '\n')
 f.close()
 
 
